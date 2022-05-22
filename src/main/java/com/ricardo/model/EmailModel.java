@@ -1,4 +1,4 @@
-package com.ricardo.domain;
+package com.ricardo.model;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 import com.ricardo.enums.StatusEmail;
 
 @Entity
-public class EmailDomain {
+public class EmailModel {
 
 	
 	@Id
