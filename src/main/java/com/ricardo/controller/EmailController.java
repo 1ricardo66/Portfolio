@@ -24,8 +24,8 @@ public class EmailController {
 	@Autowired
 	EmailService emailService;
 	
-	
-	  @PostMapping("/sending-email")
+	  //  JUST TO TEST APID ;P
+	  /* @PostMapping("/sending-email")
 	    public ResponseEntity<EmailModel> sendingEmail(@RequestBody  @Valid EmailDto emailDto) {
 	        EmailModel emailModel = new EmailModel();
 	        BeanUtils.copyProperties(emailDto, emailModel);
@@ -33,7 +33,7 @@ public class EmailController {
 	        emailModel.setEmailTo("ricardofps66@gmail.com");
 	        emailService.sendEmail(emailModel);
 	        return new ResponseEntity<>(emailModel, HttpStatus.CREATED);
-	    }
+	    }*/
 	  
 	  @PostMapping("/")
 	    public String  saveEmail(@Valid EmailDto emailDto, RedirectAttributes attributes) {
