@@ -38,10 +38,14 @@ public class HomePage {
 	
 	@PostMapping("/teste")
     public String  saveEmail(@Valid EmailDto emailDto, RedirectAttributes attributes) {
-        EmailModel emailModel = new EmailModel();
+		String email ="";
+        EmailModel emailModel = new EmailModel();   
         BeanUtils.copyProperties(emailDto, emailModel);
         emailModel.setEmailFrom("1programming66@gmail.com");
         emailModel.setEmailTo("ricardofps66@gmail.com");
+        
+        
+        
         emailService.sendEmail(emailModel);
         return "redirect:/teste";
     }

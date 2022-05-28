@@ -34,7 +34,14 @@ public class EmailService {
             message.setFrom(emailModel.getEmailFrom());
             message.setTo(emailModel.getEmailTo());
             message.setSubject(emailModel.getSubject());
-            message.setText(emailModel.getText());
+            String email = "############################################################\n"+
+            		"Assunto: "+emailModel.getSubject()+"\n"+
+            		"Nome: "+emailModel.getOwnerRef()+"\n"+
+            		"Email: "+emailModel.getSender()+"\n"+
+            		"Telefone: "+emailModel.getPhone()+"\n"+
+            		"############################################################\n\n";
+            message.setText(email+emailModel.getText());
+            System.out.print(emailModel.getText());
             emailSender.send(message);
 
             emailModel.setStatusEmail(StatusEmail.SENT);
