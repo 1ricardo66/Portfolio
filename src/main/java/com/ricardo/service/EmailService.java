@@ -45,11 +45,12 @@ public class EmailService {
         }
     }
 
-    public Page<EmailModel> findAll(Pageable pageable) {
+    
+    /*public Page<EmailModel> findAll(Pageable pageable) {
         return  emailRepository.findAll(pageable);
     }
 
     public Optional<EmailModel> findById(UUID emailId) {
         return emailRepository.findById(emailId);
-    }
+    }*/
 }
