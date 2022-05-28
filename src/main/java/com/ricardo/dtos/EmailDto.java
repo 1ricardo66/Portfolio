@@ -9,17 +9,17 @@ import javax.validation.constraints.NotBlank;
 
 public class EmailDto {
 
-    @NotBlank
+    //@NotBlank
     private String ownerRef;
-    @NotBlank
+    //@NotBlank
     @Email
     private String emailFrom;
-    @NotBlank
+    //@NotBlank
     @Email
     private String emailTo;
-    @NotBlank
+    //@NotBlank
     private String subject;
-    @NotBlank
+    //@NotBlank
     private String text;
 	public String getOwnerRef() {
 		return ownerRef;

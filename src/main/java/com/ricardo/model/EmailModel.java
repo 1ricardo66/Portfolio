@@ -25,8 +25,10 @@ public class EmailModel implements Serializable {
     private UUID emailId;
     private String ownerRef;
     private String emailFrom;
+    private String phone;
     private String emailTo;
     private String subject;
+    private String sender;
     @Column(columnDefinition = "TEXT")
     private String text;
     private LocalDateTime sendDateEmail;
@@ -36,21 +38,16 @@ public class EmailModel implements Serializable {
     
     
     
-	public EmailModel() {
-		super();
-	}
-	public EmailModel(UUID emailId, String ownerRef, String emailFrom, String emailTo, String subject, String text,
-			LocalDateTime sendDateEmail, StatusEmail statusEmail) {
-		super();
-		this.emailId = emailId;
-		this.ownerRef = ownerRef;
-		this.emailFrom = emailFrom;
-		this.emailTo = emailTo;
-		this.subject = subject;
-		this.text = text;
-		this.sendDateEmail = sendDateEmail;
-		this.statusEmail = statusEmail;
-	}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	public UUID getEmailId() {
 		return emailId;
 	}
@@ -69,6 +66,12 @@ public class EmailModel implements Serializable {
 	public void setEmailFrom(String emailFrom) {
 		this.emailFrom = emailFrom;
 	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getEmailTo() {
 		return emailTo;
 	}
@@ -80,6 +83,12 @@ public class EmailModel implements Serializable {
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
+	}
+	public String getSender() {
+		return sender;
+	}
+	public void setSender(String sender) {
+		this.sender = sender;
 	}
 	public String getText() {
 		return text;
@@ -104,7 +113,8 @@ public class EmailModel implements Serializable {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(emailFrom, emailId, emailTo, ownerRef, sendDateEmail, statusEmail, subject, text);
+		return Objects.hash(emailFrom, emailId, emailTo, ownerRef, phone, sendDateEmail, sender, statusEmail, subject,
+				text);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -117,9 +127,24 @@ public class EmailModel implements Serializable {
 		EmailModel other = (EmailModel) obj;
 		return Objects.equals(emailFrom, other.emailFrom) && Objects.equals(emailId, other.emailId)
 				&& Objects.equals(emailTo, other.emailTo) && Objects.equals(ownerRef, other.ownerRef)
-				&& Objects.equals(sendDateEmail, other.sendDateEmail) && statusEmail == other.statusEmail
+				&& Objects.equals(phone, other.phone) && Objects.equals(sendDateEmail, other.sendDateEmail)
+				&& Objects.equals(sender, other.sender) && statusEmail == other.statusEmail
 				&& Objects.equals(subject, other.subject) && Objects.equals(text, other.text);
 	}
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    
+    
+    
+	
 	
     
     
